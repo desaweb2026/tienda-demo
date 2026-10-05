@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Documento HTML5 en español -->
+<html lang="es">
+<head>
+  <!-- Codificación de caracteres para que se vean bien las tildes y la ñ -->
+  <meta charset="UTF-8">
+  <!-- Hace que la página se adapte al ancho del celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título que aparece en la pestaña del navegador -->
+  <title>Tienda demo con API</title>
+  <!-- Enlace al archivo de estilos -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <!-- Link para que quien navega con teclado salte directo a los productos -->
+  <a class="saltar" href="#lista">Ir a los productos</a>
+
+  <!-- Encabezado de la tienda -->
+  <header class="encabezado">
+    <!-- Nombre de la tienda -->
+    <h1>Tienda demo</h1>
+    <!-- Resumen del carrito; aria-live avisa a los lectores de pantalla cuando cambia -->
+    <p class="carrito" aria-live="polite">
+      <!-- Cantidad de productos agregados -->
+      Carrito: <strong id="cantidad">0</strong> productos ·
+      <!-- Total a pagar -->
+      Total: <strong id="total">$0.00</strong>
+    </p>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <!-- Cuadro que explica qué está pasando en esta página -->
+    <section class="explicacion">
+      <!-- Título del cuadro -->
+      <h2>¿De dónde salen estos productos?</h2>
+      <!-- Explicación simple de la API -->
+      <p>
+        En el código de esta página <strong>no hay ningún producto escrito a mano</strong>.
+        Cuando la abrís, el navegador le hace un pedido a una <strong>API</strong>
+        (<a href="https://dummyjson.com" target="_blank" rel="noopener">DummyJSON</a>),
+        que le devuelve los productos, precios y fotos. La página solo los dibuja.
+      </p>
+    </section>
+
+    <!-- Filtro por categoría -->
+    <div class="filtro">
+      <!-- Etiqueta asociada al selector (importante para accesibilidad) -->
+      <label for="categoria">Categoría:</label>
+      <!-- Selector de categoría; las opciones las carga app.js desde la API -->
+      <select id="categoria">
+        <!-- Opción inicial: mostrar todos -->
+        <option value="">Todas</option>
+      </select>
+    </div>
+
+    <!-- Mensaje de estado: cargando o error -->
+    <p id="estado" role="status">Cargando productos...</p>
+
+    <!-- Lista donde app.js va a dibujar los productos -->
+    <ul id="lista" class="grilla"></ul>
+  </main>
+
+  <!-- Código JavaScript de la tienda -->
+  <script src="app.js"></script>
+</body>
+</html>

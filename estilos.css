@@ -1,0 +1,174 @@
+/* Colores de la tienda: se cambian todos desde acá */
+:root {
+  /* Color principal (azul de la cátedra) */
+  --principal: #185FA5;
+  /* Azul claro para fondos suaves */
+  --suave: #E6F1FB;
+  /* Color del texto */
+  --texto: #1b2430;
+  /* Fondo de la página */
+  --fondo: #f6f8fb;
+}
+
+/* Reglas para todos los elementos: el tamaño incluye el borde y el relleno */
+* { box-sizing: border-box; }
+
+/* Estilo base de la página */
+body {
+  /* Quita el margen por defecto */
+  margin: 0;
+  /* Tipografía del sistema, legible en cualquier dispositivo */
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  /* Color de fondo */
+  background: var(--fondo);
+  /* Color del texto */
+  color: var(--texto);
+  /* Espacio entre renglones, para leer mejor */
+  line-height: 1.5;
+}
+
+/* Link invisible que aparece solo al navegar con el teclado */
+.saltar {
+  /* Lo saca de la pantalla */
+  position: absolute;
+  left: -999px;
+}
+/* Cuando recibe el foco del teclado, se muestra */
+.saltar:focus {
+  /* Lo vuelve a poner a la vista */
+  left: 8px;
+  top: 8px;
+  /* Fondo y texto con buen contraste */
+  background: #fff;
+  padding: 8px 12px;
+}
+
+/* Encabezado azul */
+.encabezado {
+  /* Fondo azul */
+  background: var(--principal);
+  /* Texto blanco */
+  color: #fff;
+  /* Espacio interior */
+  padding: 16px;
+  /* Organiza título y carrito en fila; se apilan si no entran */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+/* Título sin márgenes extra */
+.encabezado h1 { margin: 0; font-size: 1.5rem; }
+/* Resumen del carrito */
+.carrito { margin: 0; }
+
+/* Contenedor principal con ancho máximo */
+.contenido {
+  /* Ancho máximo para que no se estire demasiado */
+  max-width: 1100px;
+  /* Lo centra en la pantalla */
+  margin: 0 auto;
+  /* Espacio a los costados */
+  padding: 16px;
+}
+
+/* Cuadro explicativo */
+.explicacion {
+  /* Fondo azul claro */
+  background: var(--suave);
+  /* Línea azul a la izquierda */
+  border-left: 5px solid var(--principal);
+  /* Espacio interior */
+  padding: 12px 16px;
+  /* Bordes redondeados */
+  border-radius: 8px;
+  /* Separación con lo que sigue */
+  margin-bottom: 16px;
+}
+/* Título del cuadro explicativo */
+.explicacion h2 { margin: 0 0 4px; font-size: 1.1rem; }
+/* Párrafo del cuadro explicativo */
+.explicacion p { margin: 0; }
+
+/* Zona del filtro */
+.filtro { margin-bottom: 16px; }
+/* Selector de categoría */
+.filtro select {
+  /* Espacio interior cómodo para tocar con el dedo */
+  padding: 8px;
+  /* Letra de buen tamaño */
+  font-size: 1rem;
+}
+
+/* Grilla de productos: se adapta sola al ancho disponible */
+.grilla {
+  /* Sin viñetas de lista */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Columnas automáticas de al menos 220px */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  /* Separación entre tarjetas */
+  gap: 16px;
+}
+
+/* Tarjeta de cada producto */
+.tarjeta {
+  /* Fondo blanco */
+  background: #fff;
+  /* Borde fino */
+  border: 1px solid #d9e0ea;
+  /* Bordes redondeados */
+  border-radius: 10px;
+  /* Espacio interior */
+  padding: 12px;
+  /* Organiza el contenido en columna */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* Imagen del producto */
+.tarjeta img {
+  /* Ocupa todo el ancho de la tarjeta */
+  width: 100%;
+  /* Alto fijo para que todas las tarjetas queden parejas */
+  height: 180px;
+  /* Muestra la imagen entera sin deformarla */
+  object-fit: contain;
+  /* Fondo celeste claro detrás de la imagen */
+  background: var(--suave);
+  border-radius: 6px;
+}
+/* Nombre del producto */
+.tarjeta h3 { margin: 0; font-size: 1rem; }
+/* Categoría del producto */
+.categoria { margin: 0; font-size: 0.85rem; color: #4b5b70; }
+/* Precio del producto */
+.precio { margin: 0; font-size: 1.2rem; font-weight: 700; }
+
+/* Botón de agregar al carrito */
+.tarjeta button {
+  /* Lo empuja al fondo de la tarjeta */
+  margin-top: auto;
+  /* Colores con buen contraste */
+  background: var(--principal);
+  color: #fff;
+  /* Sin borde */
+  border: 0;
+  /* Tamaño cómodo para el dedo */
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  /* Cursor de mano */
+  cursor: pointer;
+}
+/* Resalta el botón al pasar el mouse o al enfocarlo con el teclado */
+.tarjeta button:hover,
+.tarjeta button:focus-visible {
+  /* Azul más oscuro */
+  background: #0f4378;
+  /* Contorno visible */
+  outline: 3px solid #f0a500;
+}
