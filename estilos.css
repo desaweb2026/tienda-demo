@@ -1,13 +1,13 @@
 /* Colores de la tienda: se cambian todos desde acá */
 :root {
   /* Color principal (azul de la cátedra) */
-  --principal: #185FA5;
+  --principal: #0b975b;
   /* Azul claro para fondos suaves */
-  --suave: #E6F1FB;
+  --suave: #eff6fc;
   /* Color del texto */
-  --texto: #1b2430;
+  --texto: #152d13;
   /* Fondo de la página */
-  --fondo: #f6f8fb;
+  --fondo: #f7fbf6;
 }
 
 /* Reglas para todos los elementos: el tamaño incluye el borde y el relleno */
