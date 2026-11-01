@@ -49,7 +49,7 @@ async function cargarProductos(categoria) {
   // Si se eligió una categoría pedimos solo esa; si no, pedimos 24 productos
   const direccion = categoria
     ? URL_BASE + '/products/category/' + categoria
-    : URL_BASE + '/products?limit=24';
+    : URL_BASE + '/products?limit=12';
   // Intentar hacer el pedido; si falla, se va al bloque "catch"
   try {
     // Hacer el pedido a la API
